@@ -3,6 +3,8 @@
     $paragraphLenght = strlen(str_replace(' ', '', $paragraph));
     $censored = str_replace($_GET["censor"], '***', $paragraph);
     $censoredLenght = strlen(str_replace(' ', '', $censored));
+    $currentYear = date("Y");
+    $myYear = 1998;
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +37,12 @@
         else
             echo $censored;"<h1>La frase censurata:</h1><p><span>è lunga: </span>" + $censoredLenght;"<span> caratteri</span></p>";
     ?>
+</div>
+<div>
+    <h4>La mia età è <?php echo $currentYear - $myYear ?> anni</h4>
+</div>
+<div>
+    <span>copyright <?php echo $currentYear ?></span>
 </div>
 
 </body>
