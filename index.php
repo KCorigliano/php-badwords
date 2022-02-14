@@ -1,6 +1,6 @@
 <?php
     $paragraph = 'lorem ipsum dolorem';
-    $paragraphLenght = strlen($paragraph);
+    $paragraphLenght = strlen(str_replace(' ', '', $paragraph));
 ?>
 
 <!DOCTYPE html>
@@ -20,5 +20,6 @@
     echo $paragraphLenght;
     echo " caratteri";
 ?>
+
 </body>
 </html>
