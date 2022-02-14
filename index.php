@@ -1,6 +1,8 @@
 <?php
-    $paragraph = 'lorem ipsum dolorem';
+    $paragraph = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit ex repellat iste blanditiis officia ea totam, possimus iusto aperiam voluptas sit! Porro corrupti earum ullam cum saepe ut aut quas.';
     $paragraphLenght = strlen(str_replace(' ', '', $paragraph));
+    $censored = str_replace($_GET["censor"], '***', $paragraph);
+    $censoredLenght = strlen(str_replace(' ', '', $censored));
 ?>
 
 <!DOCTYPE html>
@@ -13,13 +15,27 @@
 </head>
 <body>
 
-<?php
-    echo "La frase \"";
-    echo $paragraph;
-    echo "\" è lunga: ";
-    echo $paragraphLenght;
-    echo " caratteri";
-?>
+<div>
+    <h1>La prima frase:</h1>
+    <?php
+        echo $paragraph;
+    ?>
+    <p>
+        <span>è lunga: </span>
+        <?php
+            echo $paragraphLenght;
+        ?>
+        <span> caratteri</span>
+    </p>
+</div>
+<div>
+    <?php
+        if (!$_GET["censor"])
+            echo "<h1 style=\"color:red\">Non hai inserito \"?censor\" = \"qualsiasi parola\" nell'url!</h1>";
+        else
+            echo $censored;"<h1>La frase censurata:</h1><p><span>è lunga: </span>" + $censoredLenght;"<span> caratteri</span></p>";
+    ?>
+</div>
 
 </body>
 </html>
