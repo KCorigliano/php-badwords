@@ -1,7 +1,7 @@
 <?php
     $paragraph = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit ex repellat iste blanditiis officia ea totam, possimus iusto aperiam voluptas sit! Porro corrupti earum ullam cum saepe ut aut quas.';
     $paragraphLenght = strlen(str_replace(' ', '', $paragraph));
-    $censored = str_replace($_GET["censor"], '***', $paragraph);
+    $censored = str_replace($_GET["censor"], '***', strtolower($paragraph));
     $censoredLenght = strlen(str_replace(' ', '', $censored));
     $currentYear = date("Y");
     $myYear = 1998;
