@@ -35,8 +35,7 @@
         if (!$_GET["censor"])
             echo "<h1 style=\"color:red\">Non hai inserito \"?censor\" = \"qualsiasi parola\" nell'url!</h1>";
         else
-            echo "<h1>La frase censurata:</h1>" . $censored;
-            echo "<p><span>è lunga: </span>" . $censoredLenght . "<span> caratteri</span></p>";
+            echo "<h1>La frase censurata:</h1>" . $censored . "<p><span>è lunga: </span>" . $censoredLenght . "<span> caratteri</span></p>";
     ?>
 </div>
 <div>
